@@ -1,0 +1,34 @@
+{
+  "name": "create-next-example-app",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --write **/*.js",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": ["npm run lint:write", "git add"]
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "next": "^7.0.2",
+    "next-redux-saga": "^3.0.0",
+    "next-redux-wrapper": "^2.0.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-saga": "^0.16.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3"
+  }
+}
