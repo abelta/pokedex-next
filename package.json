@@ -5,8 +5,8 @@
     "build": "next build",
     "start": "next start",
     "prettier": "prettier --write **/*.js",
-    "lint": "eslint --debug src/",
-    "lint:write": "eslint --debug src/ --fix"
+    "lint": "eslint --debug .",
+    "lint:write": "eslint --debug . --fix"
   },
   "husky": {
     "hooks": {
