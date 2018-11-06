@@ -1,4 +1,4 @@
-import { call, put, spawn, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import * as types from '../actions/actionTypes';
 import { pokemonGetFailed, pokemonGetSucceeded } from '../actions';
 import { pokemonGetRequestedApiCall } from '../api';
@@ -17,8 +17,4 @@ const pokemonGetRequestedSaga = function* pokemonGetRequestedSaga() {
   yield takeLatest(types.POKEMON_GET_REQUESTED, pokemonGetRequested);
 };
 
-const pokemonGetSaga = function* pokemonGetSaga() {
-  yield spawn(pokemonGetRequestedSaga);
-};
-
-export default pokemonGetSaga;
+export default pokemonGetRequestedSaga;

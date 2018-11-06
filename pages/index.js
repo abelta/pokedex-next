@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { pokemonIndexRequested } from '../actions';
 
 class Home extends Component {
-  static getInitialProps({ store }) {
+  static async getInitialProps({ store }) {
     store.dispatch(pokemonIndexRequested());
   }
 
@@ -13,7 +13,7 @@ class Home extends Component {
       <div>
         <h1>HOME!!!</h1>
         {pokemonIndex.map(p => (
-          <div>{p.name}</div>
+          <div key={p.name}>{p.name}</div>
         ))}
       </div>
     );
@@ -22,5 +22,4 @@ class Home extends Component {
 
 const mapStateToProps = state => state;
 
-// export default withReduxSaga(Home);
 export default connect(mapStateToProps)(Home);
